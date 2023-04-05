@@ -1,0 +1,2 @@
+[04-Apr-2023 22:22:44 America/Argentina/Buenos_Aires] PHP Warning:  system() has been disabled for security reasons in /home/redgealp/public_html/zip.php on line 2
+[04-Apr-2023 22:24:08 America/Argentina/Buenos_Aires] PHP Warning:  shell_exec() has been disabled for security reasons in /home/redgealp/public_html/zip.php on line 2

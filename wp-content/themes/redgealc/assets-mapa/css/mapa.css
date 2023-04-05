@@ -1,0 +1,68 @@
+.datos {
+  position: sticky;
+  top: 20%;
+  border: 1px #444 solid;
+  padding: 24px;
+  font-size: 13px;
+  display: none;
+}
+
+.paisnombre {
+  /*
+  position: fixed;
+  top: 46px;
+  */
+  position: fixed;
+  left: 23px;
+  top: 78%;
+  width: 300px;
+}
+
+.datos .datce {
+  float: right;
+}
+
+.datos .datit {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+/*
+.datos .datex {
+  padding-bottom: 10px;
+}
+*/
+.datos .btn-cerrar {
+  border: solid 1px black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.datos .btn-cerrar:hover {
+  background-color: orange;
+}
+h2{font-weight: bold;}
+
+.datos .datce {display: none;}
+a{color: black;}
+
+.datos .datit{font-size: 18px; font-weight: 1200; text-transform: uppercase; padding: 15px 0; border-bottom: 1px solid black;border-top: 1px solid black;}
+/*.datos .datex{padding-top: 12px; padding-bottom:12px; font-size: 16px; font-weight: 600;}*/
+
+.datos .lineas_tit .accordion-button{padding-left:10px}
+.datos .accordion-body{padding:0 13px}
+
+.datos ul{padding-left: 0; padding-bottom: 15px; border-bottom: 1px solid black;}
+.datos li{list-style: none; padding: 12px 0;font-weight: bold;}
+.datos li, .datos li a{color: #666;}
+
+.sandwich{float: right;}
+
+#mapdata{font-size: 15px;}
+.mapa-caja{display: none;}
+.map-lists{padding: 10px 0; /*border-bottom: 1px solid #444;*/ border-top: 1px solid #444;}
+.mob-pais{font-size:18px;font-weight: bold ;}
+.lineas-pais{font-weight: bold; padding: 15px 0; color: #999;}
+.lineas-pais .active{color: black;}
+.map-data{padding: 6px 0;}
+.links-pais{padding: 15px 0;}

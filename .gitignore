@@ -1,6 +1,9 @@
 .well-known
 cgi-bin
 .htaccess
-wp-includes
 .ini
 .ftpquota
+.user.ini
+uploads/
+uploads-webpc/
+debug.log

@@ -1,0 +1,44 @@
+.datos {
+  position: sticky;
+  top: 20%;
+  border: 1px #444 solid;
+  padding: 24px;
+  font-size: 13px;
+  display: none;
+}
+
+.paisnombre {
+  /*
+  position: fixed;
+  top: 46px;
+  */
+  position: fixed;
+  left: 23px;
+  top: 78%;
+  width: 300px;
+}
+
+.datos .datce {
+  float: right;
+}
+
+.datos .datit {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.datos .datex {
+  padding-bottom: 10px;
+}
+
+.datos .btn-cerrar {
+  border: solid 1px black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.datos .btn-cerrar:hover {
+  background-color: orange;
+}
+h2{font-weight: bold;}

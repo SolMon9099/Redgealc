@@ -1,0 +1,20 @@
+[07-Feb-2023 20:19:32 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/redgealp/public_html/wp-content/themes/redgealc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/redgealp/public_html/wp-content/themes/redgealc/index.php on line 1
+[30-Mar-2023 00:18:14 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/redgealp/public_html/wp-content/themes/redgealc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/redgealp/public_html/wp-content/themes/redgealc/index.php on line 1
+[30-Mar-2023 00:37:59 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/redgealp/public_html/wp-content/themes/redgealc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/redgealp/public_html/wp-content/themes/redgealc/index.php on line 1
+[30-Mar-2023 00:39:57 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/redgealp/public_html/wp-content/themes/redgealc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/redgealp/public_html/wp-content/themes/redgealc/index.php on line 1
+[30-Mar-2023 00:42:46 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/redgealp/public_html/wp-content/themes/redgealc/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home/redgealp/public_html/wp-content/themes/redgealc/index.php on line 1

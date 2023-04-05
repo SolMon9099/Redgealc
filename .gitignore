@@ -7,3 +7,4 @@ cgi-bin
 uploads/
 uploads-webpc/
 debug.log
+wp-config

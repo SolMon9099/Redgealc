@@ -30,19 +30,19 @@
 
 
 	<!--custom styles, added time() so that it wont cache the css file -->
-	<link href="<?php echo get_stylesheet_directory_uri() ?>/style.css?v=<?php echo time(); ?>" rel="stylesheet">
-	<link href="<?php echo get_stylesheet_directory_uri() ?>/style.css?v=<?php echo time(); ?>" rel="stylesheet">
-	<link href="<?php echo get_stylesheet_directory_uri() ?>/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
-	<link href="<?php echo get_stylesheet_directory_uri() ?>/assets/fontawesome/css/brands.min.css" rel="stylesheet">
-	<link href="<?php echo get_stylesheet_directory_uri() ?>/assets/fontawesome/css/solid.min.css" rel="stylesheet">
+	<link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?v=<?php echo time(); ?>" rel="stylesheet">
+	<link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?v=<?php echo time(); ?>" rel="stylesheet">
+	<link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+	<link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fontawesome/css/brands.min.css" rel="stylesheet">
+	<link href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fontawesome/css/solid.min.css" rel="stylesheet">
 	<?php if (is_page_template('page-mapa.php')) { ?>
-		<link href="<?php echo get_stylesheet_directory_uri() ?>/assets-mapa/css/fonts.css" rel="stylesheet">
-		<link href="<?php echo get_stylesheet_directory_uri() ?>/assets-mapa/css/mapa.css" rel="stylesheet">
+		<link href="<?php echo get_stylesheet_directory_uri(); ?>/assets-mapa/css/fonts.css" rel="stylesheet">
+		<link href="<?php echo get_stylesheet_directory_uri(); ?>/assets-mapa/css/mapa.css" rel="stylesheet">
 	<?php } ?>
 
 	<!--wordpress head-->
 	<?php wp_head();
-	?>
+    ?>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109584578-1"></script>
 	<script>
@@ -62,12 +62,12 @@
 		<div class="container">
 			<header class="d-flex flex-wrap justify-content-center py-3">
 				<?php
-				if (is_active_sidebar('header_1')) :
-					dynamic_sidebar('header_1');
-				endif;
-				?>
-				<a href="#" class="nav-link">LOGIN</a> <span class="pe-2 ps-2">|</span>
-				<?php pll_the_languages(array('show_flags' => 0, 'show_names' => 1, 'dropdown' => 1)); ?>
+                if (is_active_sidebar('header_1')) {
+                    dynamic_sidebar('header_1');
+                }
+                ?>
+				<a href="<?php echo wp_login_url(); ?>" class="nav-link">LOGIN</a> <span class="pe-2 ps-2">|</span>
+				<?php pll_the_languages(['show_flags' => 0, 'show_names' => 1, 'dropdown' => 1]); ?>
 			</header>
 
 		</div>
@@ -75,29 +75,29 @@
 	<section id="header2" class="border-bottom bg-light sticky-top">
 		<nav class="navbar primary-nav navbar-expand-lg bg-light navbar-light  " aria-label="navbar">
 			<?php
-			$imgurl = get_stylesheet_directory_uri() . "/assets/img/logo_redgealc.jpg";
-			$custom_logo_id = get_theme_mod('custom_logo');
-			$image = wp_get_attachment_image_src($custom_logo_id, 'full');
-			if ($image) {
-				if ($image[0] != '') {
-					$imgurl = $image[0];
-				}
-			}
-			?>
+            $imgurl = get_stylesheet_directory_uri().'/assets/img/logo_redgealc.jpg';
+            $custom_logo_id = get_theme_mod('custom_logo');
+            $image = wp_get_attachment_image_src($custom_logo_id, 'full');
+            if ($image) {
+                if ($image[0] != '') {
+                    $imgurl = $image[0];
+                }
+            }
+            ?>
 			<div class="container"> <a class="navbar-brand" href="<?php echo get_home_url(); ?>"><img src="<?php echo $imgurl; ?>" alt="Logo Redgealc" /> </a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
 				<div class="collapse navbar-collapse" id="navbar">
 					<?php
-					wp_nav_menu(array(
-						'theme_location' => 'main-menu',
-						'container' => false,
-						'menu_class' => '',
-						'fallback_cb' => '__return_false',
-						'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-lg-0 %2$s">%3$s</ul>',
-						'depth' => 3,
-						'walker' => new bs5_Walker()
-					));
-					?>
+                    wp_nav_menu([
+                        'theme_location' => 'main-menu',
+                        'container' => false,
+                        'menu_class' => '',
+                        'fallback_cb' => '__return_false',
+                        'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-lg-0 %2$s">%3$s</ul>',
+                        'depth' => 3,
+                        'walker' => new bs5_Walker(),
+                    ]);
+                    ?>
 				</div>
 
 			</div>

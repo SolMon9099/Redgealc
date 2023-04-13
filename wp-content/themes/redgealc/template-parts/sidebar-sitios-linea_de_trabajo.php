@@ -43,12 +43,12 @@ $linea_de_trabajo_name = $term->name;
 if ( $the_query->have_posts() ) {
 	?>
 
-		<div class="aside-country-select pt-4 ps-4 pb-1 pe-4 mb-4">
+<div class="aside-country-select pt-4 ps-4 pb-1 pe-4 mb-4">
 
-	<h4>Sitios de<br>
-  <? echo $linea_de_trabajo_name;?></h4>
+	<h4><?php echo pll_e('Sitios de');?><br>
+	<? echo $linea_de_trabajo_name;?></h4>
 
-	<h5>por país</h5>
+	<h5><?php echo pll_e('por país');?></h5>
 	<div class="input-group filtro-form">
 		<input type="text" class="form-control" placeholder="Buscar País" id="list-paises" onkeyup="filter_data('list-paises', 'a')">
 		<!--<input type="text" class="form-control" placeholder="Buscar País" id="list-paises" >-->
@@ -58,15 +58,11 @@ if ( $the_query->have_posts() ) {
 	
 	</div>
 	<ul id="list-paises-ul" class="country-list scroll-custom-01">
-
-		<? 
+	<? 
 	while ( $the_query->have_posts() ) {
 		$the_query->the_post();
-		
-		
 /* BUSCA ENLACES */
 		while ( have_rows( 'enlaces_list' ) ): the_row();
-		
 /* BANDERA */
 				$pais_terms = wp_get_post_terms( $post->ID, 'pais' );
 				foreach ( $pais_terms as $pais_term ) {
@@ -75,8 +71,6 @@ if ( $the_query->have_posts() ) {
 					$pais_bandera = get_field( 'bandera', 'pais_' . $pais_id );
 				}
 				/* FIN BANDERA */
-		
-		
 		
 		// Get parent value.
 		//$titulo_del_enlace = get_sub_field( 'titulo_del_enlace' );?>
@@ -98,9 +92,7 @@ if ( $the_query->have_posts() ) {
 
 		<?
 		endwhile;
-		endif;
-	
-				
+		endif;	
 endwhile;
 			/* FIN BUSCA ENLACES */	
 		
@@ -108,7 +100,7 @@ endwhile;
 
 
 	</ul>
-					</div>
+</div>
 
 	<?
 } else {

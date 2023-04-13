@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row">
         <div class="col">
-          <h2>BUSCADOR</h2>
+          <h2><?php pll_e('BUSCADOR'); ?></h2>
           <form class="buscador-form" role="search">
             <input class="form-control me-2 " name="s" type="search"  value="<?php the_search_query(); ?>" placeholder="" aria-label="Search">
             <button class="btn btn_buscar" type="submit"></button>
@@ -45,67 +45,65 @@
     'cat' => $catego,
     'posts_per_page' => $cantidad
   );
-  
+
   $the_query = new WP_Query($args);
   if ($the_query->have_posts()) :
     $the_posts = get_posts($args);
 */
 
-  $args = array(
-    "hide_empty" => false,
+  $args = [
+    'hide_empty' => false,
     'taxonomy' => 'linea_de_trabajo',
     'orderby' => 'name',
-    'order'   => 'ASC'
-  );
+    'order' => 'ASC',
+  ];
 
   $cats = get_categories($args);
-  if ($cats) :
-
-  ?>
+  if ($cats) {
+      ?>
     <section id="features" class="bg-gris">
       <div class="container">
-        <h2>Nuestras<br>
-          LÍNEAS DE TRABAJO</h2>
+        <h2><?php pll_e('Nuestras'); ?><br>
+        <?php pll_e('LÍNEAS DE TRABAJO'); ?></h2>
         <div class="row d-flex justify-content-center">
           <?php
           //foreach ($the_posts as $post) :
-          foreach ($cats as $cat) :
-            //echo '<br>'.$cat->term_id;
-            $catnam = $cat->name;
-            $image = get_field('icono', 'linea_de_trabajo_'.$cat->term_id);
-            if (!empty($image)) {
-              $catimg = $image;
-            } else {
-              $catimg = get_stylesheet_directory_uri() . '/assets/img/nopic.jpg';
-            }
-            $caturl = '/lineas-de-trabajo/'.$cat->slug;
-          ?>
+          foreach ($cats as $cat) {
+              //echo '<br>'.$cat->term_id;
+              $catnam = $cat->name;
+              $image = get_field('icono', 'linea_de_trabajo_'.$cat->term_id);
+              if (!empty($image)) {
+                  $catimg = $image;
+              } else {
+                  $catimg = get_stylesheet_directory_uri().'/assets/img/nopic.jpg';
+              }
+              $caturl = '/lineas-de-trabajo/'.$cat->slug; ?>
           
 			
 			<div class="col-2 card feature_item no_deco_link">
               <div class="ratio ratio-1x1">
 
                 <div>
-                  <a href="<?php echo $caturl;?>" class="rounded-circle bg-orange feature_circle" title="<?php echo $catnam; ?>" alt="<?php echo $catnam; ?>">
-                  <img src="<?php echo $catimg;?>" />
+                  <a href="<?php echo $caturl; ?>" class="rounded-circle bg-orange feature_circle" title="<?php echo $catnam; ?>" alt="<?php echo $catnam; ?>">
+                  <img src="<?php echo $catimg; ?>" />
                   </a>
                 </div>
 
               </div>
-              <h3><a href="<?php echo $caturl;?>" title="<?php echo $catnam; ?>" alt="<?php echo $catnam; ?>" class="stretched-link"><?php echo $catnam; ?></a></h3>
+              <h3><a href="<?php echo $caturl; ?>" title="<?php echo $catnam; ?>" alt="<?php echo $catnam; ?>" class="stretched-link"><?php echo $catnam; ?></a></h3>
             </div>
 			
 			
 			
           <?php
-          endforeach;
-          ?>
+          } ?>
         </div>
         <!-- /.row -->
       </div>
     </section>
 
-  <?php endif; ?>
+  <?php
+  } ?>
 
   <section id="">
     <div class="container">

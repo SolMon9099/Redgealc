@@ -183,7 +183,7 @@ class filterByUserCountry
         $user = wp_get_current_user();
         $user_country = get_user_meta($user->ID, 'country', true);
         $user_roles = $user->roles;
-        if (!in_array('administrator', $user_roles) && $user_country != '') {
+        if (is_admin() && !in_array('administrator', $user_roles) && $user_country != '') {
             $query->set('pais', $user_country);
         }
     }

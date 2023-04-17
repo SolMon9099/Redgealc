@@ -577,23 +577,25 @@ add_filter('redirect_canonical', function ($redirect_url) {
 }, 10, 1);
 
 add_action('init', function () {
-    pll_register_string('general_text', 'BUSCADOR');
-    pll_register_string('general_text', 'Nuestras');
-    pll_register_string('general_text', 'LÍNEAS DE TRABAJO');
-    pll_register_string('general_text', 'Buscar en REDGEALC');
-    pll_register_string('general_text', 'PAÍSES DE LA');
-    pll_register_string('general_text', 'PERFILES Y ACTIVIDADES');
-    pll_register_string('general_text', 'Buscar País');
-    pll_register_string('general_text', 'Últimas');
-    pll_register_string('general_text', 'NOTICIAS');
-    pll_register_string('general_text', 'VER TODAS');
-    pll_register_string('general_text', 'Destacadas');
-    pll_register_string('general_text', 'Sitios de');
-    pll_register_string('general_text', 'por país');
-    pll_register_string('general_text', 'Últimos');
-    pll_register_string('general_text', 'EVENTOS');
-    pll_register_string('general_text', 'VER TODOS LOS EVENTOS');
-    pll_register_string('general_text', 'Destacados');
-    pll_register_string('general_text', 'Súmese a');
-    pll_register_string('general_text', 'SUSCRÍBASE');
+    if (function_exists('pll_register_string')) {
+        pll_register_string('general_text', 'BUSCADOR');
+        pll_register_string('general_text', 'Nuestras');
+        pll_register_string('general_text', 'LÍNEAS DE TRABAJO');
+        pll_register_string('general_text', 'Buscar en REDGEALC');
+        pll_register_string('general_text', 'PAÍSES DE LA');
+        pll_register_string('general_text', 'PERFILES Y ACTIVIDADES');
+        pll_register_string('general_text', 'Buscar País');
+        pll_register_string('general_text', 'Últimas');
+        pll_register_string('general_text', 'NOTICIAS');
+        pll_register_string('general_text', 'VER TODAS');
+        pll_register_string('general_text', 'Destacadas');
+        pll_register_string('general_text', 'Sitios de');
+        pll_register_string('general_text', 'por país');
+        pll_register_string('general_text', 'Últimos');
+        pll_register_string('general_text', 'EVENTOS');
+        pll_register_string('general_text', 'VER TODOS LOS EVENTOS');
+        pll_register_string('general_text', 'Destacados');
+        pll_register_string('general_text', 'Súmese a');
+        pll_register_string('general_text', 'SUSCRÍBASE');
+    }
 });

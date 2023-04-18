@@ -184,7 +184,9 @@ class filterByUserCountry
         $user_country = get_user_meta($user->ID, 'country', true);
         $user_roles = $user->roles;
         if (is_admin() && !in_array('administrator', $user_roles) && $user_country != '') {
-            $query->set('pais', $user_country);
+            if (!($query->get('post_type') === 'attachment')) {
+                $query->set('pais', $user_country);
+            }
         }
     }
 

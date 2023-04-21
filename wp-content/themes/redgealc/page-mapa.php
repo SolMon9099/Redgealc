@@ -6,11 +6,12 @@
 -- -- -- -- -- -- -- -- -- - MAIN-- -- -- -- -- -- -- --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <main>
-  <?php include("mapa/map-datos.php"); ?>
+  <?php include 'mapa/map-datos.php'; ?>
   <section class="banner-section" id="mapa">
     <div class="container" style="padding-top:25px">
-      <h5>Nuestras</h5>
-      <h2>LINEAS DE TRABAJO</h2>
+      <h5><?php pll_e('Nuestras'); ?></h5>
+      
+      <h2><?php pll_e('LÍNEAS DE TRABAJO'); ?></h2>
       <div class="row" style="padding: 50px 0;">
         <div class="d-block d-md-none col-12">
           <div class="sandwich navbar" onclick="ocultar('mapaimg')">
@@ -19,19 +20,19 @@
           <div class="collapse navbar-collapse" id="mapdata">
             <?php
             foreach ($pais as $infos) {
-              echo $infos['mobi'];
+                echo $infos['mobi'];
             }
             ?>
           </div>
         </div>
         <div class="col-sm-12 col-md-8" id="mapaimg">
-          <?php include("mapa/mapasvg.php"); ?>
+          <?php include 'mapa/mapasvg.php'; ?>
         </div>
         <div class="col-4 textomapa d-none d-sm-block">
           <div class="row">
             <?php
             foreach ($pais as $infos) {
-              echo $infos['desk'];
+                echo $infos['desk'];
             }
             ?>
           </div>

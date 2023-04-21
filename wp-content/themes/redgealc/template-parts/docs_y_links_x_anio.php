@@ -38,7 +38,8 @@ foreach ( $tax_terms as $tax_term ) { // loop through the terms
 			array(
 				'taxonomy' => $taxonomy2,
 				'field' => 'ID',
-				'terms' => $term->term_id
+				'terms' => $terms_ids,
+				'operator' => 'IN',
 			),
 			array(
 				'taxonomy' => $taxonomy,

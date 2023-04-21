@@ -17,8 +17,8 @@ $args = array(
 		array(
 			'taxonomy' => 'pais',
 			'field' => 'ID',
-			'terms' => $pais->term_id,
-			//'operator' => 'IN',
+			'terms' => $paises_ids,
+			'operator' => 'IN',
 		),
 		array(
 			'taxonomy' => 'tipo_de_recurso',

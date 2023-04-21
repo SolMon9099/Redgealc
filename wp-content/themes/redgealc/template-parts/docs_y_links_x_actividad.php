@@ -16,7 +16,8 @@ $args = array(
 		array(
 			'taxonomy' => 'tipo_de_actividad',
 			'field' => 'ID',
-			'terms' => $term->term_id
+			'terms' => $terms_ids,
+			'operator' => 'IN',
 		)
 	),
 	'post_status' => 'publish',

@@ -16,7 +16,7 @@ $args = array(
 		array(
 			'taxonomy' => 'linea_de_trabajo',
 			'field' => 'ID',
-			'terms' => $term->term_id,
+			'terms' => $terms_ids,
 			'operator' => 'IN',
 
 		),

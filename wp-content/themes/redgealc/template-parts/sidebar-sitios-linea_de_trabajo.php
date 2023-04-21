@@ -15,8 +15,8 @@ $args = array(
 		array(
 			'taxonomy' => 'linea_de_trabajo',
 			'field' => 'ID',
-			'terms' => $term->term_id,
-			//'operator' => 'IN',
+			'terms' => $terms_ids,
+			'operator' => 'IN',
 
 		),
 		array(
@@ -36,7 +36,7 @@ $args = array(
 );
 
 $the_query = new WP_Query( $args );
-$linea_de_trabajo_name = $term->name;
+$linea_de_trabajo_name = isset($term) ? $term->name : '';
 
 
 // The Loop

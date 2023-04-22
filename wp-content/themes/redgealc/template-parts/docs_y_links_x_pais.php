@@ -1,13 +1,15 @@
 <?php
-$terms = wp_get_post_terms( $post->ID, 'tipo_de_recurso' );
-$paises = wp_get_post_terms( $post->ID, 'pais' );
-
+// $terms = wp_get_post_terms( $post->ID, 'tipo_de_recurso' );
+// $paises = wp_get_post_terms( $post->ID, 'pais' );
+$cat = get_queried_object();
 $paises_ids = [];
 
-foreach ( $paises as $pais ) {
-	$paises_ids[] = $pais->term_id;
+// foreach ( $paises as $pais ) {
+// 	$paises_ids[] = $pais->term_id;
+// }
+if (isset($cat)) {
+    $paises_ids = [$cat->term_id];
 }
-
 // The Query: docs y links
 // The Query: docs y links
 $args = array(

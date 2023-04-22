@@ -47,7 +47,7 @@ $the_query = new WP_Query( $args );
 
 // The Loop
 if ( $the_query->have_posts() ) { ?>
-<h3>Enlaces y documentos</h3>
+	<h3><?php pll_e("Enlaces y documentos");?></h3>
 	<div class="accordion accordion-flush" id="accordion_docs_linea"><!--OPEN wrapper_accordion -->
 
 	<? $counter = 0;

@@ -1,4 +1,4 @@
-<?php  ?>
+<?php ?>
 
 <?php get_header(); ?>
 
@@ -9,18 +9,18 @@
 	<section id="#">
 
 		<?php get_template_part('template-parts/heading-taxonomy', 'none'); ?>
-		  <?php get_template_part('template-parts/banner-superior', 'none'); ?>
+		<?php get_template_part('template-parts/banner-superior', 'none'); ?>
 
 
 		<div class="container main-content">
 			<div class="row">
 				<div class="col-lg-9">
-					<?php // the_content(); ?>
+					<?php // the_content();?>
 
 					<?php get_template_part('template-parts/news-list_x_pais', 'none'); ?>
 					<?php get_template_part('template-parts/eventos-list_x_pais', 'none'); ?>
 					
-					<h2>Información del país</h2>
+					<h2><?php pll_e('Información del país'); ?></h2>
 					<?php get_template_part('template-parts/personas_x_pais', 'none'); ?>
 					<?php get_template_part('template-parts/docs_y_links_x_pais', 'none'); ?>
 					

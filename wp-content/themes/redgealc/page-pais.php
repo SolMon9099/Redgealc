@@ -7,20 +7,17 @@
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -->
 <main>
 	<section id="#">
-
 		<?php get_template_part('template-parts/heading-linea', 'none'); ?>
 
 		<div class="container main-content">
 			<div class="row">
 				<div class="col-lg-9">
 					<?php the_content(); ?> 
-								<?php // get_template_part('template-parts/linea-news', 'none'); ?>
-								<?php get_template_part('template-parts/personas_x_pais', 'none'); ?>
-								<?php get_template_part('template-parts/news-list_x_pais', 'none'); ?>
-				
-				
+					<?php // get_template_part('template-parts/linea-news', 'none');?>
+					<?php get_template_part('template-parts/personas_x_pais', 'none'); ?>
+					<?php get_template_part('template-parts/news-list_x_pais', 'none'); ?>
 				</div>
-        <?php get_template_part('template-parts/sidebar-pages', 'none'); ?>
+				<?php get_template_part('template-parts/sidebar-pages', 'none'); ?>
 			</div>
 		</div>
 	</section>

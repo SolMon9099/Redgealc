@@ -14,8 +14,6 @@
 
 		<?php get_template_part('template-parts/heading-buscador', 'none'); ?>
 		<?php echo do_shortcode('[wd_asp id=1]'); ?>
-		<!-- <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?> -->
-		
 		
 		<div class="container main-content">
 			<div class="row">

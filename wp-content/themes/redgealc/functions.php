@@ -597,5 +597,9 @@ add_action('init', function () {
         pll_register_string('general_text', 'Destacados');
         pll_register_string('general_text', 'Súmese a');
         pll_register_string('general_text', 'SUSCRÍBASE');
+        pll_register_string('general_text', 'Enlaces y documentos');
+        pll_register_string('general_text', 'Información del país');
+        pll_register_string('general_text', 'País');
+        pll_register_string('general_text', 'Autoridades de gobierno electrónico en');
     }
 });

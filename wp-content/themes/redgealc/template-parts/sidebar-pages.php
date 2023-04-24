@@ -13,19 +13,27 @@
 			</div>
 		</div>
 <?php	} ?>
-<?php	if (is_page_template('page-lineas.php')) {
+
+<?php
+if (is_page_template('page-lineas.php')) {
     get_template_part('template-parts/sidebar-sitios-linea_de_trabajo', 'none');
 } else {
     get_template_part('template-parts/sidebar-paises', 'none');
 }
 ?>
-	</div>
-
-	<?php
-
+</div>
+<?php
+$lang = get_locale();
+if ($lang == 'es_MX') {
     if (is_active_sidebar('sidebar_1')) {
         dynamic_sidebar('sidebar_1');
     }
-    ?>
+} elseif ($lang = 'en_US') {
+    if (is_active_sidebar('sidebar_2')) {
+        dynamic_sidebar('sidebar_2');
+    }
+}
+
+?>
 
 </aside>

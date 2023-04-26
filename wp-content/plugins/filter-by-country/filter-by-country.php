@@ -50,7 +50,11 @@ class filterByUserCountry
         add_filter('manage_users_custom_column', [$this, 'custom_user_column_content'], 10, 3);
 
         //custom sidebar of admin page by login user
-        add_action('admin_menu', [$this, 'custom_admin_menu']);
+        // add_action('admin_menu', [$this, 'custom_admin_menu']);
+
+        //show only user's country in country page
+        add_action('pre_get_terms', [$this, 'filter_country_list']);
+
         //filter data by login-user country
         add_action('pre_get_posts', [$this, 'filter_posts_page']);
         //hide country meta box in post editor
@@ -71,7 +75,7 @@ class filterByUserCountry
         if ($update == false && !in_array('administrator', $user_roles) && $user_country != '') {
             $fixed_term = $user_country;
             $taxonomy = 'pais';
-            $term_id = get_term_by('name', $fixed_term, $taxonomy)->term_id;
+            $term_id = get_term_by('slug', $fixed_term, $taxonomy)->term_id;
             wp_set_object_terms($post_id, $term_id, $taxonomy);
         }
     }
@@ -83,7 +87,13 @@ class filterByUserCountry
         } else {
             $country = '';
         }
-        $all_countries = get_terms('pais'); ?>
+        $current_language = get_locale();
+        $all_countries = get_terms([
+            'taxonomy' => 'pais',
+            'hide_empty' => false,
+            'lang' => $current_language,
+        ]);
+        // $all_countries = get_terms('pais');?>
         
         <table class="form-table">
             <tr>
@@ -92,10 +102,10 @@ class filterByUserCountry
                     <select name="country" id="country" class="regular-text">
                         <option value=""></option>
                         <?php foreach ($all_countries as $item) { ?>
-                        <?php if ($country == $item->name) { ?>
-                            <option selected value=<?php echo $item->name; ?>><?php echo $item->name; ?></option>
+                        <?php if ($country == $item->slug) { ?>
+                            <option selected value=<?php echo $item->slug; ?>><?php echo $item->name; ?></option>
                         <?php } else { ?>
-                            <option value=<?php echo $item->name; ?>><?php echo $item->name; ?></option>
+                            <option value=<?php echo $item->slug; ?>><?php echo $item->name; ?></option>
                         <?php }?>
                         <?php } ?>
                     </select>
@@ -124,6 +134,10 @@ class filterByUserCountry
         if ('country' == $column_name) {
             // Add your custom content here
             $value = get_user_meta($user_id, 'country', true);
+            $term_data = get_term_by('slug', $value, 'pais');
+            if (isset($term_data) && isset($term_data->name)) {
+                $value = $term_data->name;
+            }
         }
 
         return $value;
@@ -178,6 +192,19 @@ class filterByUserCountry
         }
     }
 
+    public function filter_country_list($query)
+    {
+        $user = wp_get_current_user();
+        $user_country = get_user_meta($user->ID, 'country', true);
+        $user_roles = $user->roles;
+        if (is_admin() && !in_array('administrator', $user_roles) && $user_country != '') {
+            $screen = get_current_screen();
+            if ($screen && isset($screen->id) && $screen->id == 'edit-pais') {
+                $query->query_vars['slug'] = $user_country;
+            }
+        }
+    }
+
     public function filter_posts_page($query)
     {
         $user = wp_get_current_user();
@@ -185,7 +212,11 @@ class filterByUserCountry
         $user_roles = $user->roles;
         if (is_admin() && !in_array('administrator', $user_roles) && $user_country != '') {
             if (!($query->get('post_type') === 'attachment')) {
-                $query->set('pais', $user_country);
+                $screen = get_current_screen();
+                if (!($screen && isset($screen->id) && $screen->id == 'edit-pais')) {
+                    $user_country_name = get_term_by('slug', $user_country, 'pais')->name;
+                    $query->set('pais', $user_country_name);
+                }
             }
         }
     }

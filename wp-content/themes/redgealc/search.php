@@ -12,31 +12,26 @@
 <main>
 	<section id="#">
 
-		<?php get_template_part('template-parts/heading-buscador', 'none'); ?>
-		<?php echo do_shortcode('[wd_asp id=1]'); ?>
-		
-		<div class="container main-content">
-			<div class="row">
+		<?php get_template_part('template-parts/heading-buscador', 'none');?>
+		<div class="container main-content" style="display: flex;">
+			<?php echo do_shortcode('[wpdreams_asp_settings id=1 element="div"]'); ?>
+			<?php echo do_shortcode('[wpdreams_ajaxsearchpro_results id=1 element="div"]'); ?>
+			<?php //echo do_shortcode('[wd_asp id=1]'); ?>
+			<!-- <div class="row">
 				<div class="col-lg-12">
 					<div id="ult_not" class="news_list">
-
-					<!--<div class="row">
+					<div class="row">
 						<div class="col-6">
 							<h2 class="orange">Resultados para "<?php echo get_search_query(); ?>" </h2>
 						</div>
 						<div class="col-6 d-flex justify-content-end align-items-end">
 						</div>
-					</div>-->
-
-
-						<?php if (have_posts()) { ?>
-						<div id="" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 my-1">
-
+					</div>
+					<?php if (have_posts()) { ?>
+					<div id="" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 my-1">
 						<?php while (have_posts()) { ?>
 						<?php the_post(); ?>
-
 						<?php
-
                         $thetitle = cortar(get_the_title(), 77);
                         $theexcer = cortar(get_the_excerpt(), 80);
                         $paises = get_the_terms($post->ID, 'pais');
@@ -52,18 +47,12 @@
                                 $banderas[] = get_field('bandera', 'pais_'.$pais->term_id);
                             }
                         }
-
                         ?>
 						<div class="col">
 							<div class="card h-100">
-
-
 								<div class="ratio ratio-4x3">
 									<div style="background: url(<?php echo $imgurl; ?>) no-repeat center center; background-size:cover"></div>
 								</div>
-
-
-
 
 								<div class="card-header">
 									<?php echo get_the_date('j F Y'); ?>
@@ -78,28 +67,31 @@
 								</div>
 							</div>
 						</div>
-
-
-
 						<?php } ?>
 					</div>
-						<div class="row" id="pagination"><div class="col d-flex justify-content-center"><?php echo wpk_get_the_posts_pagination(); ?>
-</div></div>
+					<div class="row" id="pagination">
+						<div class="col d-flex justify-content-center"><?php echo wpk_get_the_posts_pagination(); ?>
+						</div>
+					</div>
+					<?php } else { ?>
+					<p>
+						<?php _e('No se han encontrado resultados', 'nd_dosth'); ?>
+					</p>
+					<?php } ?>
 
-						<?php } else { ?>
-						<p>
-							<?php _e('No se han encontrado resultados', 'nd_dosth'); ?>
-						</p>
-						
-						
-						
-						
-							<?php } ?>
-
-				</div>
 				</div>
 			</div>
+			</div> -->
 		</div>
 	</section>
 </main>
 <?php get_footer(); ?>
+<script>
+	jQuery(document).ready(function($) {
+    $(window).on('load', function() {
+        setTimeout(() => {
+			$('.promagnifier').trigger('click');
+        }, 200);
+    });
+});
+</script>

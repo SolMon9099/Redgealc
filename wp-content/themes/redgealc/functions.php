@@ -601,5 +601,17 @@ add_action('init', function () {
         pll_register_string('general_text', 'Información del país');
         pll_register_string('general_text', 'País');
         pll_register_string('general_text', 'Autoridades de gobierno electrónico en');
+        pll_register_string('general_text', 'Linea de trabajo');
+        pll_register_string('general_text', 'Tipo');
+        pll_register_string('general_text', 'Generic filters');
+        pll_register_string('general_text', 'Seleccionar todo');
+        pll_register_string('general_text', 'Search in title');
+        pll_register_string('general_text', 'Search in content');
+        pll_register_string('general_text', 'Search in excerpt');
+        pll_register_string('general_text', 'Results');
+        pll_register_string('general_text', 'for');
+        pll_register_string('general_text', 'ADVANCED SEARCH');
+        pll_register_string('ajax-search-pro', 'Results  <strong>{results_count_total}</strong>');
+        pll_register_string('ajax-search-pro', 'Results for <strong>{phrase}</strong> (<strong>{results_count_total}</strong>)');
     }
 });

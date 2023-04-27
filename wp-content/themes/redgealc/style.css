@@ -1904,7 +1904,7 @@ footer figure{margin:0}
     width: 100%;
     height: auto;
 }
-.main-content {padding-top:3rem}
+.main-content {padding-top:1rem;min-height: 1100px;}
 
 .country-person-details .person-details{line-height: 28px;color: rgb(33,37,41);}
 

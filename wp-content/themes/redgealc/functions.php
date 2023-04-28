@@ -576,6 +576,10 @@ add_filter('redirect_canonical', function ($redirect_url) {
     return $redirect_url;
 }, 10, 1);
 
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('jquery-ui', 'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', [], '1.12.1');
+});
+
 add_action('init', function () {
     if (function_exists('pll_register_string')) {
         pll_register_string('general_text', 'BUSCADOR');
@@ -612,6 +616,9 @@ add_action('init', function () {
         pll_register_string('general_text', 'for');
         pll_register_string('general_text', 'ADVANCED SEARCH');
         pll_register_string('general_text', 'Etiquetas');
+        pll_register_string('general_text', 'From');
+        pll_register_string('general_text', 'To');
+        pll_register_string('general_text', 'Choose date');
         pll_register_string('ajax-search-pro', 'Results  <strong>{results_count_total}</strong>');
         pll_register_string('ajax-search-pro', 'Results for <strong>{phrase}</strong> (<strong>{results_count_total}</strong>)');
     }

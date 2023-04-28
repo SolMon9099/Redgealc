@@ -1,9 +1,7 @@
 <?php
 
 /**
- * The theme footer
- * 
- * @package redgealc
+ * The theme footer.
  */
 ?>
 
@@ -12,26 +10,26 @@
 		<div class="container">
 			<div class="row">
 				<?php
-				$footcol = 12;
-				if (is_active_sidebar('footer_1') && is_active_sidebar('footer_2')) {
-					$footcol = 6;
-				}
-				if (is_active_sidebar('footer_1')) :
-				?>
+                $footcol = 12;
+                if (is_active_sidebar('footer_1') && is_active_sidebar('footer_2')) {
+                    $footcol = 6;
+                }
+                if (is_active_sidebar('footer_1')) {
+                    ?>
 					<div class="col-<?php echo $footcol; ?>">
 						<?php
-						dynamic_sidebar('footer_1');
-						?>
+                        dynamic_sidebar('footer_1'); ?>
 					</div>
-				<?php endif;
-				if (is_active_sidebar('footer_2')) :
-				?>
+				<?php
+                }
+                if (is_active_sidebar('footer_2')) {
+                    ?>
 					<div class="col-<?php echo $footcol; ?> redes">
 						<?php
-						dynamic_sidebar('footer_2');
-						?>
+                        dynamic_sidebar('footer_2'); ?>
 					</div>
-				<?php endif; ?>
+				<?php
+                } ?>
 
 
 			</div>
@@ -42,27 +40,27 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-12 col-md-6 col-lg-2 d-flex flex-column justify-content-center align-items-center">
-					<?php if (is_active_sidebar('footer_3_1')) :
-						dynamic_sidebar('footer_3_1');
-					endif; ?>
+					<?php if (is_active_sidebar('footer_3_1')) {
+                    dynamic_sidebar('footer_3_1');
+                } ?>
 				</div>
 				<div class="col-12 col-md-6 col-lg-5 d-flex flex-column justify-content-center align-items-center justify-content-center">
 					<div class="d-flex gap-1 align-items-center">
-						<?php if (is_active_sidebar('footer_3_2')) :
-							dynamic_sidebar('footer_3_2');
-						endif; ?>
+						<?php if (is_active_sidebar('footer_3_2')) {
+                    dynamic_sidebar('footer_3_2');
+                } ?>
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-lg-3 d-flex flex-column justify-content-center align-items-center footer-menu mb-3 mb-lg-0">
-				<?php if (is_active_sidebar('footer_3_3')) :
-							dynamic_sidebar('footer_3_3');
-						endif; ?>
+				<?php if (is_active_sidebar('footer_3_3')) {
+                    dynamic_sidebar('footer_3_3');
+                } ?>
 				</div>
 				<div class="col-12 col-md-6 col-lg-2">
 					<div class="row d-flex flex-column justify-content-center align-items-center g-3">
-					<?php if (is_active_sidebar('footer_3_4')) :
-							dynamic_sidebar('footer_3_4');
-						endif; ?>
+					<?php if (is_active_sidebar('footer_3_4')) {
+                    dynamic_sidebar('footer_3_4');
+                } ?>
 					</div>
 				</div>
 			</div>
@@ -70,8 +68,8 @@
 	</footer>
 <?php } ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/accordion.js"></script>
-
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/accordion.js"></script>
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/jquery-ui.js"></script>
 <script>
 	function filter_data(id, type) {
 		// Declare variables

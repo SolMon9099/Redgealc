@@ -611,6 +611,7 @@ add_action('init', function () {
         pll_register_string('general_text', 'Results');
         pll_register_string('general_text', 'for');
         pll_register_string('general_text', 'ADVANCED SEARCH');
+        pll_register_string('general_text', 'Etiquetas');
         pll_register_string('ajax-search-pro', 'Results  <strong>{results_count_total}</strong>');
         pll_register_string('ajax-search-pro', 'Results for <strong>{phrase}</strong> (<strong>{results_count_total}</strong>)');
     }

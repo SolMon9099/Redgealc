@@ -53,7 +53,7 @@ class filterByUserCountry
         // add_action('admin_menu', [$this, 'custom_admin_menu']);
 
         //show only user's country in country page
-        add_action('pre_get_terms', [$this, 'filter_country_list']);
+        add_filter('get_terms_args', [$this, 'filter_country_list'], 10, 2);
 
         //filter data by login-user country
         add_action('pre_get_posts', [$this, 'filter_posts_page']);
@@ -192,7 +192,7 @@ class filterByUserCountry
         }
     }
 
-    public function filter_country_list($query)
+    public function filter_country_list($args, $taxonomies)
     {
         $user = wp_get_current_user();
         $user_country = get_user_meta($user->ID, 'country', true);
@@ -200,9 +200,13 @@ class filterByUserCountry
         if (is_admin() && !in_array('administrator', $user_roles) && $user_country != '') {
             $screen = get_current_screen();
             if ($screen && isset($screen->id) && $screen->id == 'edit-pais') {
-                $query->query_vars['slug'] = $user_country;
+                if (isset($args['taxonomy']) && in_array('pais', $args['taxonomy'])) {
+                    $args['slug'] = $user_country;
+                }
             }
         }
+
+        return $args;
     }
 
     public function filter_posts_page($query)
